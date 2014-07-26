@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{A2515229-DE93-4F09-AAF3-27D3137A8CB8}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MIPSEmulator</RootNamespace>
+    <AssemblyName>MIPSEmulator</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE;TEST</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NUnit.Framework">
+      <HintPath>$(SharpDevelopBinPath)\Tools\NUnit\NUnit.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ALUOp.cs" />
+    <Compile Include="ArithmeticLogicUnit.cs">
+      <DependentUpon>Processor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assembly\Assembler.cs" />
+    <Compile Include="Assembly\AssemblerTest.cs" />
+    <Compile Include="Assembly\AssemblyException.cs" />
+    <Compile Include="Assembly\Function.cs" />
+    <Compile Include="Assembly\Instruction.cs" />
+    <Compile Include="Assembly\InstructionType.cs" />
+    <Compile Include="Assembly\Opcode.cs" />
+    <Compile Include="Assembly\Register.cs" />
+    <Compile Include="ClockedComponent.cs">
+      <DependentUpon>Processor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlSignals.cs" />
+    <Compile Include="ControlUnit.cs">
+      <DependentUpon>Processor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataMemory.cs" />
+    <Compile Include="DataMemorySynchronizer.cs">
+      <DependentUpon>Processor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DecodeStageRegister.cs">
+      <DependentUpon>Processor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExecuteStageRegister.cs">
+      <DependentUpon>Processor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FetchStageRegister.cs">
+      <DependentUpon>Processor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForwardSource.cs" />
+    <Compile Include="HazardEvent.cs" />
+    <Compile Include="HazardMode.cs" />
+    <Compile Include="HazardTypes.cs" />
+    <Compile Include="ManualClock.cs" />
+    <Compile Include="MemoryAccessEvent.cs" />
+    <Compile Include="MemoryStageRegister.cs">
+      <DependentUpon>Processor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PCSource.cs" />
+    <Compile Include="Processor.cs" />
+    <Compile Include="ProcessorComponent.cs">
+      <DependentUpon>Processor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramCounter.cs">
+      <DependentUpon>Processor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramMemory.cs" />
+    <Compile Include="ProgramMemorySynchronizer.cs">
+      <DependentUpon>Processor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterAccessEvent.cs" />
+    <Compile Include="RegisterFile.cs">
+      <DependentUpon>Processor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StageRegister.cs">
+      <DependentUpon>Processor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemClock.cs" />
+    <Compile Include="TimedClock.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assembly" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Assembler\mips_assembler\bin\Release\x86\mips_assembler.dll">
+      <Link>mips_assembler.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="test_script.ms">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>

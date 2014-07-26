@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{2847654E-66A5-429A-8626-CC76E6B3F927}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PipelineSim</RootNamespace>
+    <AssemblyName>PipelineSim</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\Seth\AppData\Roaming\ICSharpCode/SharpDevelop4\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\GeneralSettings.cs" />
+    <Compile Include="Config\RecentFileElement.cs" />
+    <Compile Include="Config\RecentFilesCollection.cs" />
+    <Compile Include="Config\RecentFilesSettings.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="GUI\AboutDialog.cs" />
+    <Compile Include="GUI\ArithmeticBlockView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ClockedComponentView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CombinationalLogicBlockView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ControlUnitView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DataMemoryInspector.cs" />
+    <Compile Include="GUI\DataMemoryView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DecodeRegisterView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DisassemblyInspector.cs" />
+    <Compile Include="GUI\ExecuteRegisterView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FetchRegisterView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ForwardUnitView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MemoryRegisterView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MuxView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OptionsDialog.cs" />
+    <Compile Include="GUI\PipelineSimForm.cs" />
+    <Compile Include="GUI\ProcessorView.cs">
+      <DependentUpon>PipelineSimForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProgramCounterView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ProgramMemoryView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\RegisterFileView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\RegisterInspector.cs" />
+    <Compile Include="GUI\Signal.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SignalsView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StageRegisterView.cs">
+      <DependentUpon>ProcessorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MixTracker.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUI" />
+    <Folder Include="Config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FormsExtensions\FormsExtensions.csproj">
+      <Project>{CACF3CC1-5658-429D-95D3-5955B441516D}</Project>
+      <Name>FormsExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MIPSEmulator\MIPSEmulator.csproj">
+      <Project>{A2515229-DE93-4F09-AAF3-27D3137A8CB8}</Project>
+      <Name>MIPSEmulator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>

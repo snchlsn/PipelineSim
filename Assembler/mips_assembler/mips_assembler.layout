@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release_x64" />
+	<File name="..\inst_node.c" open="1" top="0" tabpos="1">
+		<Cursor position="99" topLine="0" />
+	</File>
+	<File name="..\inst_node.h" open="1" top="0" tabpos="2">
+		<Cursor position="185" topLine="0" />
+	</File>
+	<File name="..\label_tree.c" open="1" top="1" tabpos="4">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="..\label_tree.h" open="1" top="0" tabpos="3">
+		<Cursor position="1080" topLine="0" />
+	</File>
+	<File name="..\mips_lexer.c" open="1" top="0" tabpos="5">
+		<Cursor position="58627" topLine="2162" />
+	</File>
+	<File name="..\mips_parser.h" open="1" top="0" tabpos="6">
+		<Cursor position="65009" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>
